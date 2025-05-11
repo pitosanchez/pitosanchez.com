@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -85,16 +85,6 @@ const HomePage = () => {
     }
   };
 
-  const handleContactClick = () => {
-    // Implement contact form modal or redirect
-    console.log("Contact clicked");
-  };
-
-  const handleResumeDownload = () => {
-    // Implement resume download
-    console.log("Resume download clicked");
-  };
-
   const navItems = [
     { id: "about", label: "About" },
     { id: "experience", label: "Experience" },
@@ -104,7 +94,7 @@ const HomePage = () => {
   ];
 
   return (
-    <div ref={mainRef} className="min-h-screen font-sans text-gray-900">
+    <div ref={mainRef} className="min-h-screen font-display text-gray-900">
       {/* Navigation */}
       <nav
         className={`fixed w-full z-50 transition-all duration-300 ${
@@ -114,22 +104,20 @@ const HomePage = () => {
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
+          <div className="flex flex-col md:flex-row justify-between items-center h-20">
             <motion.h1
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="text-2xl font-light tracking-wider text-white"
-            >
-              ROBERT A. SANCHEZ
-            </motion.h1>
+              className="text-xl sm:text-2xl font-light tracking-wider text-white font-display mb-2 md:mb-0"
+            ></motion.h1>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
+            <div className="hidden md:flex flex-1 justify-evenly items-center">
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`text-sm tracking-wider transition-colors text-white hover:text-[#2D6FAB] ${
+                  className={`text-base sm:text-lg font-sans tracking-wide transition-colors text-white hover:text-[#2D6FAB] ${
                     activeSection === item.id ? "text-[#2D6FAB]" : ""
                   }`}
                 >
@@ -139,7 +127,7 @@ const HomePage = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-[#2D6FAB] hover:bg-[#2D6FAB]/90 text-white px-6 py-2 rounded-md transition-colors"
+                className="bg-[#2D6FAB] hover:bg-[#2D6FAB]/90 text-white px-4 sm:px-6 py-2 rounded-md transition-colors text-base sm:text-lg font-sans tracking-wide"
               >
                 Work with me
               </motion.button>
@@ -147,7 +135,7 @@ const HomePage = () => {
 
             {/* Mobile Menu Button */}
             <button
-              className="md:hidden text-white"
+              className="md:hidden text-white mt-2 md:mt-0"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               <svg
@@ -178,17 +166,17 @@ const HomePage = () => {
               exit={{ opacity: 0, height: 0 }}
               className="md:hidden bg-[#91B8DC]"
             >
-              <div className="px-4 pt-2 pb-4 space-y-2">
+              <div className="px-4 pt-2 pb-4 space-y-2 flex flex-col">
                 {navItems.map((item) => (
                   <button
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
-                    className="block w-full text-left px-4 py-2 text-white hover:text-[#2D6FAB] hover:bg-white/10 rounded-md transition-colors"
+                    className="block w-full text-left px-4 py-2 text-white hover:text-[#2D6FAB] hover:bg-white/10 rounded-md transition-colors text-base tracking-wide"
                   >
                     {item.label}
                   </button>
                 ))}
-                <button className="w-full bg-[#2D6FAB] hover:bg-[#2D6FAB]/90 text-white px-4 py-2 rounded-md transition-colors">
+                <button className="w-full bg-[#2D6FAB] hover:bg-[#2D6FAB]/90 text-white px-4 py-2 rounded-md transition-colors text-base tracking-wide">
                   Work with me
                 </button>
               </div>
@@ -200,26 +188,26 @@ const HomePage = () => {
       {/* Hero Section */}
       <section
         id="home"
-        className="relative min-h-screen bg-[#91B8DC] text-white flex items-center justify-center py-32 overflow-hidden"
+        className="relative min-h-[60vh] sm:min-h-screen bg-[#91B8DC] text-white flex items-center justify-center py-20 sm:py-32 overflow-hidden"
       >
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/40" />
-        <div className="hero-content relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="hero-content relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center font-display">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <p className="text-xl uppercase tracking-wider font-light mb-6">
-              Your Certified Guide To
+            <p className="text-3xl sm:text-5xl uppercase tracking-wider font-light mb-4 sm:mb-6 font-cinzel">
+              ROBERT A. SANCHEZ
             </p>
-            <h2 className="text-5xl md:text-7xl font-display font-thin leading-tight mb-12">
+            <h2 className="text-2xl sm:text-5xl md:text-7xl font-cinzel font-thin leading-tight mb-8 sm:mb-12">
               Advocating Health Equity
               <br />& Social Justice
             </h2>
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-[#2D6FAB] hover:bg-[#2D6FAB]/90 text-white px-8 py-4 rounded-md text-lg transition-colors"
+              className="bg-[#2D6FAB] hover:bg-[#2D6FAB]/90 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-md text-base sm:text-lg transition-colors font-display"
             >
               Start Your Journey
             </motion.button>
@@ -228,24 +216,27 @@ const HomePage = () => {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="bg-[#2D6FAB] text-white py-24 px-4">
+      <section
+        id="services"
+        className="bg-[#2D6FAB] text-white py-16 sm:py-24 px-2 sm:px-4"
+      >
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-10 sm:mb-16"
           >
-            <h2 className="text-4xl font-display font-light mb-6">
+            <h2 className="text-2xl sm:text-4xl font-display font-light mb-4 sm:mb-6">
               Our Services
             </h2>
-            <p className="text-lg max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg max-w-3xl mx-auto">
               Empowering individuals and communities through comprehensive
               healthcare advocacy and education.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-12">
             {[
               {
                 title: "Patient Advocacy",
@@ -292,9 +283,9 @@ const HomePage = () => {
       </section>
 
       {/* Resume Highlight Section */}
-      <section id="resume" className="bg-[#E9E9ED] py-24 px-4">
+      <section id="resume" className="bg-[#E9E9ED] py-16 sm:py-24 px-2 sm:px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -305,16 +296,16 @@ const HomePage = () => {
                 <img
                   src="/robert-sanchez.webp"
                   alt="Robert Sanchez - Health Equity Advocate"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover shadow-lg"
                 />
               </div>
             </motion.div>
 
-            <div className="resume-content">
-              <h3 className="text-4xl font-display mb-8">
+            <div className="resume-content mt-8 md:mt-0">
+              <h3 className="text-2xl sm:text-4xl font-display mb-6 sm:mb-8">
                 Professional Experience
               </h3>
-              <div className="space-y-8">
+              <div className="space-y-6 sm:space-y-8">
                 {[
                   {
                     title: "Senior Clinical Interviewer & Patient Advocate",
@@ -358,7 +349,7 @@ const HomePage = () => {
       {/* Advocacy Section */}
       <section
         id="advocacy"
-        className="bg-[#91B8DC] py-24 px-4 text-white relative overflow-hidden"
+        className="bg-[#91B8DC] py-16 sm:py-24 px-2 sm:px-4 text-white relative overflow-hidden"
       >
         <div className="advocacy-bg absolute inset-0 bg-[#2D6FAB]/20" />
         <div className="relative max-w-7xl mx-auto text-center">
@@ -367,10 +358,10 @@ const HomePage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-4xl md:text-5xl font-display font-light mb-8">
+            <h3 className="text-2xl sm:text-4xl md:text-5xl font-display font-light mb-6 sm:mb-8">
               Rehabilitation Through the Arts (RTA)
             </h3>
-            <p className="text-lg max-w-3xl mx-auto mb-12">
+            <p className="text-base sm:text-lg max-w-3xl mx-auto mb-8 sm:mb-12">
               My work with RTA and the inspiration behind the movie{" "}
               <em>Sing Sing</em> underscores my commitment to transformative
               justice through creativity.
@@ -378,7 +369,7 @@ const HomePage = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-[#2D6FAB] hover:bg-[#2D6FAB]/90 px-8 py-3 rounded-md transition-colors"
+              className="bg-[#2D6FAB] hover:bg-[#2D6FAB]/90 px-6 sm:px-8 py-3 sm:py-4 rounded-md transition-colors text-base sm:text-lg"
             >
               Learn More
             </motion.button>
@@ -387,21 +378,23 @@ const HomePage = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="bg-white py-24 px-4">
+      <section id="contact" className="bg-white py-16 sm:py-24 px-2 sm:px-4">
         <div className="max-w-3xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-4xl font-display mb-6">Let's Connect</h3>
-            <p className="text-lg mb-12 text-gray-600">
+            <h3 className="text-2xl sm:text-4xl font-display mb-4 sm:mb-6">
+              Let's Connect
+            </h3>
+            <p className="text-base sm:text-lg mb-8 sm:mb-12 text-gray-600">
               Interested in collaboration or advocacy? Reach out today.
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-[#2D6FAB] hover:bg-[#2D6FAB]/90 text-white px-8 py-3 rounded-md transition-colors"
+              className="bg-[#2D6FAB] hover:bg-[#2D6FAB]/90 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-md transition-colors text-base sm:text-lg"
             >
               Contact Me
             </motion.button>
