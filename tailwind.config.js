@@ -13,7 +13,8 @@ module.exports = {
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['Playfair Display', 'serif'],
+        display: ['"Josefin Sans"', 'sans-serif'],
+        cinzel: ['"Cinzel"', 'serif'],
       },
       spacing: {
         '128': '32rem',
