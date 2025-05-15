@@ -1,50 +1,90 @@
-# React + TypeScript + Vite
+# Robert A. Sanchez - Personal Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive personal website showcasing Robert A. Sanchez's work in health equity advocacy, patient care, and community engagement.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Dynamic Resume**: Interactive resume section with downloadable PDF and Word versions
+- **Blog**: Latest insights and articles on health equity and advocacy
+- **Events**: Upcoming and past events with registration functionality
+- **Testimonials**: Carousel of testimonials from colleagues and partners
+- **Resource Library**: Searchable collection of educational resources
+- **Contact Form**: Validated contact form with user feedback
+- **Social Integration**: Links to professional social media profiles
+- **Analytics**: Google Analytics integration for tracking user engagement
+- **Accessibility**: WCAG 2.1 compliant with skip links and ARIA labels
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- React
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- GSAP
+- Google Analytics
 
-- Configure the top-level `parserOptions` property like this:
+## Getting Started
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+1. Clone the repository:
+
+```bash
+git clone https://github.com/yourusername/pitosanchez.com.git
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+2. Install dependencies:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+cd pitosanchez.com
+npm install
 ```
+
+3. Create a `.env` file in the root directory and add your Google Analytics tracking ID:
+
+```
+NEXT_PUBLIC_GA_TRACKING_ID=your-tracking-id
+```
+
+4. Start the development server:
+
+```bash
+npm run dev
+```
+
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── HomePage.tsx
+│   ├── Blog.tsx
+│   ├── Events.tsx
+│   ├── Testimonials.tsx
+│   └── ResourceLibrary.tsx
+├── types/
+│   └── global.d.ts
+├── public/
+│   ├── images/
+│   └── resources/
+└── styles/
+    └── globals.css
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+Robert A. Sanchez - [robsanchez124@gmail.com](mailto:robsanchez124@gmail.com)
+
+Project Link: [https://github.com/yourusername/pitosanchez.com](https://github.com/yourusername/pitosanchez.com)
