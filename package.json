@@ -12,10 +12,11 @@
   "dependencies": {
     "-": "^0.0.1",
     "@gsap/react": "^2.1.2",
-    "framer-motion": "^12.10.5",
+    "framer-motion": "^12.11.0",
     "gsap": "^3.13.0",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.6.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.15.0",
