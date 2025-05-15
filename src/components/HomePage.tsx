@@ -3,10 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import Blog from "./Blog";
-import Events from "./Events";
 import Testimonials from "./Testimonials";
-import ResourceLibrary from "./ResourceLibrary";
 
 gsap.registerPlugin(ScrollTrigger);
 
